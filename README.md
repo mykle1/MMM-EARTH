@@ -4,7 +4,7 @@ A MagicMirror module to display the Astronomy Picture of the Day from NASA
 
 ## Example
 
-![](.github/mimas.jpg) ![](.github/butterfly.jpg)
+![](github/mimas.jpg) ![](github/butterfly.jpg)
 
 ## Dependencies
 
