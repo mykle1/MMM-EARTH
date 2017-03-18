@@ -3,6 +3,7 @@
 A MagicMirror module to display the Astronomy Picture of the Day from NASA
 
 ## Example
+Mimas, one of Saturn's moons, taken by the Cassini spacecraft and the Butterfly Nebula from Hubble
 
 ![](github/mimas.jpg) ![](github/butterfly.jpg)
 
