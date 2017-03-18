@@ -19,9 +19,9 @@ No API key is necessary but these limits apply. 30 requests per IP address per h
 
 ## Installation
 
-Clone this repo into the ~/MagicMirror/modules directory.
-cd MMM-NASA
-Run command npm install in ~/MagicMirror/modules/MMM-NASA directory.
+Clone this repo into `~/MagicMirror/modules` directory.
+`cd MMM-NASA`
+`npm install` in ~/MagicMirror/modules/MMM-NASA directory.
 
 ## Add to Config.js
 
