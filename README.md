@@ -12,7 +12,7 @@ Mimas, one of Saturn's moons, taken by the Cassini spacecraft and the Butterfly 
 * An installation of [MagicMirror<sup>2</sup>](https://github.com/MichMich/MagicMirror)
 * npm
 * [request](https://www.npmjs.com/package/request)
-* [moment](https://www.NEED URL.com/package/moment)
+* [moment](https://www.npmjs.com/package/moment)
 
 ## Info
 
