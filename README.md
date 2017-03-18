@@ -1,39 +1,37 @@
+# MMM-NASA
+
 A MagicMirror module to display the Astronomy Picture of the Day from NASA
 
-Example *How do I underline this*
+## Example
 
+![](.github/mimas.jpg) ![](.github/butterfly.jpg)
 
-*How do I insert pictures here*
-mimas.jpg
-butterfly.jpg
+## Dependencies
 
-Dependencies *How do I underline this*
+* An installation of [MagicMirror<sup>2</sup>](https://github.com/MichMich/MagicMirror)
+* npm
+* [request](https://www.npmjs.com/package/request)
+* [moment](https://www.NEED URL.com/package/moment)
 
-An installation of MagicMirror2
-npm
-request
-moment
+## Info
 
-Info *How do I underline this*
+No API key is necessary but these limits apply. 30 requests per IP address per hour. 50 requests per IP address per day.
 
-No API key is necessary but these limits apply. 1 update per hour is adequate.
-Hourly Limit: 30 requests per IP address per hour
-Daily Limit: 50 requests per IP address per day
+## Installation
 
-Installation *How do I underline this*
-
-Clone this repo into ~/MagicMirror/modules directory.
+Clone this repo into the ~/MagicMirror/modules directory.
 cd MMM-NASA
 Run command npm install in ~/MagicMirror/modules/MMM-NASA directory.
 
-Config Options *How do I underline this*
+## Config Options
 
-*How do I make this a table*
-Option	    Default    	Description 
-updateInterval: 10 * 360000 ms, // 1 hour. No need to change this.
-animationSpeed: 1000,  // the speed at which the module loads
-initialLoadDelay: 2500, // load delay
-retryDelay: 2500,  // if no data how long before retry
-header: "", 
-picWidth: "",
-picHeight: "",
+| **Option** | **Default** | **Description** |
+| --- | --- | --- |
+| `updateInterval` | `10 * 360000` (1 hour) | How often should the data be fetched in ms. |
+| `animationSpeed` | `1000` | The speed at which the module loads in ms. |
+| `initialLoadDelay` | `2500` | Module load delay in ms |
+| `retryDelay` | `2500` |Delay to retry fetching data. |
+| `header` | `""` | Add header between the `""` if desired. |
+| `picWidth` | `""`|  Choose width of image between the `""` (Ex: `200px`). |
+| `picHeight` | `""` | Choose height of image between the `""` (Ex: `200px`).. |
+
