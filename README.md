@@ -15,7 +15,9 @@ A MagicMirror module to display the Astronomy Picture of the Day from NASA
 
 ## Info
 
-No API key is necessary but these limits apply. 30 requests per IP address per hour. 50 requests per IP address per day.
+* No API key is necessary but these limits apply.
+* 30 requests per IP address per hour
+* 50 requests per IP address per day.
 
 ## Installation
 
