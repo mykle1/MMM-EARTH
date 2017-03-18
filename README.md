@@ -23,6 +23,21 @@ Clone this repo into the ~/MagicMirror/modules directory.
 cd MMM-NASA
 Run command npm install in ~/MagicMirror/modules/MMM-NASA directory.
 
+## Add to Config.js
+
+    ```
+    {
+        module: "MMM-NASA",
+        position: "top_center",
+        config: {
+            header: "",
+            picWidth: "250px",
+            picHeight: "250px",
+            ...
+        }
+    },
+    ```
+
 ## Config Options
 
 | **Option** | **Default** | **Description** |
