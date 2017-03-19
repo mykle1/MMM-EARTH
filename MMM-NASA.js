@@ -1,7 +1,7 @@
 /* Magic Mirror
  * Module: MMM-NASA
  *
- * By Mykle1
+ * By Mykle1 but all the dark magic was conjured by cowboysdude
  * 
  */
 Module.register("MMM-NASA", {
