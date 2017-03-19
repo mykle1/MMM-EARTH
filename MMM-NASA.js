@@ -8,17 +8,17 @@ Module.register("MMM-NASA", {
 
     // Module config defaults.
     defaults: {
-        updateInterval: 120000,
+        updateInterval: 10 * 360000,
         animationSpeed: 1000,
-        initialLoadDelay: 30, // 0 seconds delay Well that's wrong LOL  leave ithaha  make it longer :)
-        retryDelay: 2500, //if not data how long before retryok
-        useHeader: false, //this is called a boolean [a boolean is either true or false and nothing else. Do not use quotes around a boolean]
+        initialLoadDelay: 1000,
+        retryDelay: 2500,
+        useHeader: true,
         header: "********Please set header txt in config.js***** see instructions", // 
         MaxWidth: "40%",
         MaxHeight: "40%"
     },
 
-    // Define required scripts.  The standard :)ok
+    // Define required scripts.
     getScripts: function() {
         return ["moment.js"];
     },
