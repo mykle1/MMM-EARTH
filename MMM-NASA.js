@@ -1,24 +1,25 @@
 /* Magic Mirror
  * Module: MMM-NASA
  *
- * By Mykle1 but all the dark magic was conjured by cowboysdude
+ * By Mykle1
  * 
  */
 Module.register("MMM-NASA", {
 
     // Module config defaults.
     defaults: {
-        updateInterval: 10 * 360000,
+        updateInterval: 120000,
         animationSpeed: 1000,
-        initialLoadDelay: 1000,
-        retryDelay: 2500,
-        useHeader: true,
+        initialLoadDelay: 30, // 0 seconds delay Well that's wrong LOL  leave ithaha  make it longer :)
+        retryDelay: 2500, //if not data how long before retryok
+        useHeader: false, //this is called a boolean [a boolean is either true or false and nothing else. Do not use quotes around a boolean]
         header: "********Please set header txt in config.js***** see instructions", // 
         MaxWidth: "40%",
-        MaxHeight: "40%"
+        MaxHeight: "40%",
+        
     },
 
-    // Define required scripts.
+    // Define required scripts.  The standard :)ok
     getScripts: function() {
         return ["moment.js"];
     },
@@ -27,7 +28,6 @@ Module.register("MMM-NASA", {
         Log.info("Starting module: " + this.name);
 
         // Set locale.
-        moment.locale(config.language);
         this.today = "";
         this.scheduleUpdate();
     },
