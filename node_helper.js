@@ -1,7 +1,7 @@
 /* Magic Mirror
  * Module: MMM-NASA
  *
- * By Mykle1  
+ * By Mykle1 with all the dark magic performed by cowboysdude  
  * 
  */
 const NodeHelper = require('node_helper');
