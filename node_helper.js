@@ -17,12 +17,13 @@ module.exports = NodeHelper.create({
 
     getNASA: function(url) {
         request({
-            url: "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY",
+            url: "https://epic.gsfc.nasa.gov/api/natural",
             method: 'GET'
         }, (error, response, body) => {
             if (!error && response.statusCode == 200) {
                 var result = JSON.parse(body);
                 this.sendSocketNotification('NASA_RESULTS', result);
+               
             }
         });
     },
@@ -32,4 +33,4 @@ module.exports = NodeHelper.create({
             this.getNASA(payload);
         }
     }
-}
+});

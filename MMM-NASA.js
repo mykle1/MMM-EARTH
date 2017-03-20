@@ -8,15 +8,17 @@ Module.register("MMM-NASA", {
 
     // Module config defaults.
     defaults: {
-        updateInterval: 120000,
-        animationSpeed: 1000,
-        initialLoadDelay: 30, // 0 seconds delay Well that's wrong LOL  leave ithaha  make it longer :)
-        retryDelay: 2500, //if not data how long before retryok
-        useHeader: false, //this is called a boolean [a boolean is either true or false and nothing else. Do not use quotes around a boolean]
+        fadeSpeed: 0,
+        updateInterval: 15000,
+        animationSpeed: 10,
+        initialLoadDelay: 30,
+        retryDelay: 2500,
+        useHeader: false,
         header: "********Please set header txt in config.js***** see instructions", // 
-        MaxWidth: "40%",
-        MaxHeight: "40%",
-        
+        MaxWidth: "10%",
+        MaxHeight: "10%",
+        rotateInterval: 5 * 1000,
+
     },
 
     // Define required scripts.  The standard :)ok
@@ -29,12 +31,13 @@ Module.register("MMM-NASA", {
 
         // Set locale.
         this.today = "";
+        this.nasa = {};
+        this.activeItem = 0;
+        this.rotateInterval = null;
         this.scheduleUpdate();
     },
 
     getDom: function() {
-
-        var nasa = this.nasa;
 
         var wrapper = document.createElement("div");
         wrapper.className = "wrapper";
@@ -51,18 +54,22 @@ Module.register("MMM-NASA", {
             wrapper.appendChild(header);
         }
 
-        var top = document.createElement("div");
-        top.className = ("small bright");
+        var hkeys = Object.keys(this.nasa);
+        if (hkeys.length > 0) {
+            if (this.activeItem >= hkeys.length) {
+                this.activeItem = 0;
+            }
+            var nasa = this.nasa[hkeys[this.activeItem]];
 
-        var nasaPhoto = document.createElement("div");
-        var nasaIcon = document.createElement("img");
-        nasaIcon.style.maxWidth = this.config.MaxWidth;
-        nasaIcon.style.maxHeight = this.config.MaxHeight;
-        nasaIcon.src = nasa.hdurl;
-        nasaPhoto.appendChild(nasaIcon);
-        top.appendChild(nasaPhoto);
+            var nasaImg = nasa.image;
 
-        wrapper.appendChild(top);
+
+            var nasaPhoto = document.createElement("div");
+            nasaPhoto.innerHTML = '<img src="https://epic.gsfc.nasa.gov/archive/natural/2017/03/17/png/' + nasaImg + '.png"  width="' + this.config.MaxWidth + '" height="' + this.config.MaxHeight + '">';
+        }
+        wrapper.appendChild(nasaPhoto);
+
+
         return wrapper;
     },
 
@@ -72,12 +79,20 @@ Module.register("MMM-NASA", {
         this.loaded = true;
     },
 
+    scheduleCarousel: function() {
+        console.log("Showing Earth for today");
+        this.rotateInterval = setInterval(() => {
+            this.activeItem++;
+            this.updateDom(this.config.animationSpeed);
+        }, this.config.rotateInterval);
+    },
+
     scheduleUpdate: function() {
         setInterval(() => {
             this.getNASA();
         }, this.config.updateInterval);
-
         this.getNASA(this.config.initialLoadDelay);
+        var self = this;
     },
 
 
@@ -89,6 +104,9 @@ Module.register("MMM-NASA", {
     socketNotificationReceived: function(notification, payload) {
         if (notification === "NASA_RESULTS") {
             this.processNASA(payload);
+            if (this.rotateInterval == null) {
+                this.scheduleCarousel();
+            }
             this.updateDom(this.config.fadeSpeed);
         }
         this.updateDom(this.config.initialLoadDelay);
