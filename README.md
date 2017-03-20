@@ -3,7 +3,8 @@
 A MagicMirror module to display the Earth as it rotates.
 
 ## What you see and how you see it.
-NASA's EPIC camera, aboard NOAA's DSCOVR satellite. NASA's Earth Polychromatic Imaging Camera (EPIC) instrument provides daily, full disc imagery of the Earth and captures unique perspectives of certain astronomical events such as lunar transits using a 2048x2048 pixel CCD (Charge Coupled Device) detector coupled to a 30-cm aperture Cassegrain telescope.
+
+NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite, provides daily, full disc imagery of the Earth and captures unique perspectives of certain astronomical events, such as lunar transits. EPIC uses a 2048x2048 pixel CCD detector coupled to a 30-cm aperture Cassegrain telescope.
 
 
 
