@@ -2,7 +2,7 @@
 
 A MagicMirror module to display the Earth as it rotates.
 
-## What you can see, from 1,000,000 miles away!
+## How we look - from 1,000,000 miles away!
 
 ![](pix/7.gif)
 ##
