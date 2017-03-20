@@ -1,17 +1,18 @@
 # MMM-NASA
 
-A MagicMirror module to display the Astronomy Picture of the Day from NASA
+A MagicMirror module to display the Earth as it spins.  
 
 ## Example
 Mimas, one of Saturn's moons, taken by the Cassini spacecraft and the Butterfly Nebula from Hubble
 
-![](github/mimas.jpg) ![](github/butterfly.jpg)
+
 
 ## Dependencies
 
 * An installation of [MagicMirror<sup>2</sup>](https://github.com/MichMich/MagicMirror)
 * npm
 * [request](https://www.npmjs.com/package/request)
+
 
 ## Info
 
@@ -33,8 +34,8 @@ Mimas, one of Saturn's moons, taken by the Cassini spacecraft and the Butterfly 
         position: "top_center",
         config: {
             header: "",
-            picWidth: "250px",
-            picHeight: "250px",
+            MaxWidth: "12%",
+            MaxHeight: "12%",
             ...
         }
     },
@@ -48,7 +49,8 @@ Mimas, one of Saturn's moons, taken by the Cassini spacecraft and the Butterfly 
 | `animationSpeed` | `1000` | The speed at which the module loads in ms. |
 | `initialLoadDelay` | `2500` | Module load delay in ms |
 | `retryDelay` | `2500` |Delay to retry fetching data. |
+| `useHeader` | true |Set this to bool value true or false. Must be set to true if you use header |
 | `header` | `""` | Add header between the `""` if desired. |
-| `picWidth` | `""`|  Choose width of image between the `""` (Ex: `200px`). |
-| `picHeight` | `""` | Choose height of image between the `""` (Ex: `200px`).. |
+| `MaxWidth` | `""`|  Choose width of image between the `""` (Ex: `200px` or '12%'). |
+| `MaxHeight` | `""` | Choose height of image between the `""` (Ex: `200px` or '12%').. |
 
