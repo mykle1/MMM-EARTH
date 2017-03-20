@@ -2,11 +2,11 @@
 
 A MagicMirror module to display the Earth as it rotates.
 
-## What you could see
+## What you can see, from 1,000,000 miles away!
 
 ![](pix/7.gif)
 ##
-On July 5th, 2016, the moon passed between DSCOVR and the Earth. EPIC snapped these images over a period of about 4 hours. In this set, the far side of the moon, which is never seen from Earth, passes by.
+On July 5th, 2016, the moon passed between DSCOVR and the Earth. EPIC snapped these images over a period of about 4 hours. In this set, the far side of the moon, which is never seen from Earth, passes by. The DSCOVR satellite is, at times, 1 million miles away, more than 4 times further away than the moon itself.
 
 
 ## How you see it
