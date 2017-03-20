@@ -1,9 +1,9 @@
 # MMM-NASA
 
-A MagicMirror module to display the Earth as it spins.  
+A MagicMirror module to display the Earth as it rotates.
 
-## Example
-Mimas, one of Saturn's moons, taken by the Cassini spacecraft and the Butterfly Nebula from Hubble
+## What you see and how you see it.
+NASA's EPIC camera, aboard NOAA's DSCOVR satellite. NASA's Earth Polychromatic Imaging Camera (EPIC) instrument provides daily, full disc imagery of the Earth and captures unique perspectives of certain astronomical events such as lunar transits using a 2048x2048 pixel CCD (Charge Coupled Device) detector coupled to a 30-cm aperture Cassegrain telescope.
 
 
 
@@ -34,8 +34,8 @@ Mimas, one of Saturn's moons, taken by the Cassini spacecraft and the Butterfly 
         position: "top_center",
         config: {
             header: "",
-            MaxWidth: "12%",
-            MaxHeight: "12%",
+            MaxWidth: "50%",
+            MaxHeight: "50%",
             ...
         }
     },
