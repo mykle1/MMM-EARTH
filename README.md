@@ -2,9 +2,10 @@
 
 A MagicMirror module to display the Earth as it rotates.
 
-## What you see
+## What you could see
 
 ![](pix/7.gif)
+##
 On July 5th, 2016, the moon passed between DSCOVR and the Earth. EPIC snapped these images over a period of about 4 hours. In this set, the far side of the moon, which is never seen from Earth, passes by.
 
 
