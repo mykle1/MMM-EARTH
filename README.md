@@ -11,7 +11,7 @@ On July 5th, 2016, the moon passed between DSCOVR and the Earth. EPIC snapped th
 
 ## How you see it
 
-NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite, provides daily, full disc imagery of the Earth and captures unique perspectives of certain astronomical events, such as lunar transits. EPIC uses a 2048x2048 pixel CCD detector coupled to a 30-cm aperture Cassegrain telescope. The DSCOVR satellite was launched by SpaceX on a Falcon 9 two-stage rocket on February 11, 2015 from Cape Canaveral.
+NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite, provides daily, full disc imagery of the Earth and captures unique perspectives of certain astronomical events, such as lunar transits. (Seen above) EPIC uses a 2048x2048 pixel CCD detector coupled to a 30-cm aperture Cassegrain telescope. The DSCOVR satellite was launched by SpaceX on a Falcon 9 two-stage rocket on February 11, 2015 from Cape Canaveral.
 
 
 
