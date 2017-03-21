@@ -65,7 +65,7 @@ Module.register("MMM-NASA", {
 	console.log(nasaImg+".png");
 
         var nasaPhoto = document.createElement("div");
-        var daily = moment().subtract(2, "days").format('YYYY/MM/DD');
+        var daily = moment().subtract(3, "days").format('YYYY/MM/DD');
         nasaPhoto.innerHTML = '<img src="https://epic.gsfc.nasa.gov/archive/natural/'+daily+'/png/'+nasaImg+'.png"  width="'+this.config.MaxWidth+'" height="'+this.config.MaxHeight+'">';
         }
         wrapper.appendChild(nasaPhoto);
