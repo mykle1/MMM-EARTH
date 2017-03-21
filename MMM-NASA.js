@@ -8,17 +8,17 @@ Module.register("MMM-NASA", {
 
     // Module config defaults.
     defaults: {
-        fadeSpeed: 0,
-        updateInterval: 15000,
-        animationSpeed: 10,
-        initialLoadDelay: 30,
-        retryDelay: 2500,
-        useHeader: false,
+    	fadeSpeed: 0,
+    	updateInterval: 15000,
+        animationSpeed: 0,
+        initialLoadDelay: 0,  
+        retryDelay: 2500, 
+        useHeader: false, 
         header: "********Please set header txt in config.js***** see instructions", // 
         MaxWidth: "10%",
         MaxHeight: "10%",
         rotateInterval: 5 * 1000,
-
+        
     },
 
     // Define required scripts.  The standard :)ok
@@ -28,7 +28,7 @@ Module.register("MMM-NASA", {
 
     start: function() {
         Log.info("Starting module: " + this.name);
-
+        
         // Set locale.
         this.today = "";
         this.nasa = {};
@@ -38,7 +38,7 @@ Module.register("MMM-NASA", {
     },
 
     getDom: function() {
-
+    	
         var wrapper = document.createElement("div");
         wrapper.className = "wrapper";
 
@@ -53,23 +53,24 @@ Module.register("MMM-NASA", {
             header.innerHTML = this.config.header;
             wrapper.appendChild(header);
         }
-
+        
         var hkeys = Object.keys(this.nasa);
-        if (hkeys.length > 0) {
-            if (this.activeItem >= hkeys.length) {
-                this.activeItem = 0;
-            }
-            var nasa = this.nasa[hkeys[this.activeItem]];
+			if(hkeys.length > 0){
+           	if(this.activeItem >= hkeys.length){
+				this.activeItem = 0;
+			}
+         var nasa = this.nasa[hkeys[this.activeItem]];
+        
+			var nasaImg = nasa.image;
+	console.log(nasaImg+".png");
 
-            var nasaImg = nasa.image;
-
-
-            var nasaPhoto = document.createElement("div");
-            nasaPhoto.innerHTML = '<img src="https://epic.gsfc.nasa.gov/archive/natural/2017/03/17/png/' + nasaImg + '.png"  width="' + this.config.MaxWidth + '" height="' + this.config.MaxHeight + '">';
+        var nasaPhoto = document.createElement("div");
+        var daily = moment().subtract(2, "days").format('YYYY/MM/DD');
+        nasaPhoto.innerHTML = '<img src="https://epic.gsfc.nasa.gov/archive/natural/'+daily+'/png/'+nasaImg+'.png"  width="'+this.config.MaxWidth+'" height="'+this.config.MaxHeight+'">';
         }
         wrapper.appendChild(nasaPhoto);
-
-
+        
+        
         return wrapper;
     },
 
@@ -78,14 +79,14 @@ Module.register("MMM-NASA", {
         this.nasa = data;
         this.loaded = true;
     },
-
-    scheduleCarousel: function() {
-        console.log("Showing Earth for today");
-        this.rotateInterval = setInterval(() => {
-            this.activeItem++;
-            this.updateDom(this.config.animationSpeed);
-        }, this.config.rotateInterval);
-    },
+    
+     scheduleCarousel: function() {
+         console.log("Showing Earth for today");
+         this.rotateInterval = setInterval(() => {
+             this.activeItem++;
+             this.updateDom(this.config.animationSpeed);
+         }, this.config.rotateInterval);
+     },
 
     scheduleUpdate: function() {
         setInterval(() => {
@@ -104,9 +105,9 @@ Module.register("MMM-NASA", {
     socketNotificationReceived: function(notification, payload) {
         if (notification === "NASA_RESULTS") {
             this.processNASA(payload);
-            if (this.rotateInterval == null) {
-                this.scheduleCarousel();
-            }
+            if(this.rotateInterval == null){
+                 this.scheduleCarousel();
+             }
             this.updateDom(this.config.fadeSpeed);
         }
         this.updateDom(this.config.initialLoadDelay);
