@@ -53,12 +53,16 @@ NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite
 
 | **Option** | **Default** | **Description** |
 | --- | --- | --- |
-| `updateInterval` | `10 * 360000` (1 hour) | How often should the data be fetched in ms. |
-| `animationSpeed` | `1000` | The speed at which the module loads in ms. |
+| `updateInterval` | `1800000` | Every 30 minutes = 48. DO NOT exceed 50 per day. |
+| `animationSpeed` | `0` | The speed at which each image loads in ms. |
+| `fadeSpeed` | `0` | The speed at which each image fades in ms. |
+| `rotateInterval` | `3000` | The speed at which the images rotate in ms. |
 | `initialLoadDelay` | `2500` | Module load delay in ms |
-| `retryDelay` | `2500` |Delay to retry fetching data. |
-| `useHeader` | true |Set this to bool value true or false. Must be set to true if you use header |
-| `header` | `""` | Add header between the `""` if desired. |
-| `MaxWidth` | `""`|  Choose width of image between the `""` (Ex: `200px` or '12%'). |
-| `MaxHeight` | `""` | Choose height of image between the `""` (Ex: `200px` or '12%').. |
+| `retryDelay` | `2500`  |Delay to retry fetching data. |
+| `useHeader` | false | Must be set to true if you want a header |
+| `header` | `"Your Header"` | Add header between the `""` if desired. |
+| `MaxWidth` | `"50%"`|  Choose width of image between the `""` (Ex: `200px` or '12%'). |
+| `MaxHeight` | `"50%"` | Choose height of image between the `""` (Ex: `200px` or '12%').. |
 
+This module would not be possible without the unfailing patience, generosity and kindness of 
+cowboysdude (Module Developer - Extraordinaire)
