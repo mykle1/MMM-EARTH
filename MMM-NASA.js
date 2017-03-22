@@ -65,8 +65,8 @@ Module.register("MMM-NASA", {
 	console.log(nasaImg+".png");
 
         var nasaPhoto = document.createElement("div");
-        var daily = moment().subtract(4, "days").format('YYYY/MM/DD');
-        nasaPhoto.innerHTML = '<img src="https://epic.gsfc.nasa.gov/api/natural/'+daily+'/jpg/'+nasaImg+'.jpg"  width="'+this.config.MaxWidth+'" height="'+this.config.MaxHeight+'">';
+        var daily = moment().subtract(1, "days").format('YYYY/MM/DD');
+        nasaPhoto.innerHTML = '<img src="https://epic.gsfc.nasa.gov/archive/natural/'+daily+'/jpg/'+nasaImg+'.jpg"  width="'+this.config.MaxWidth+'" height="'+this.config.MaxHeight+'">';
         }
         wrapper.appendChild(nasaPhoto);
         
