@@ -36,7 +36,6 @@ NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite
 
 ## Add to Config.js
 
-    ```
     {
         module: "MMM-NASA",
         position: "bottom_center",
@@ -44,10 +43,8 @@ NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite
             header: "",
             MaxWidth: "50%",
             MaxHeight: "50%",
-            ...
         }
     },
-    ```
 
 ## Config Options
 
