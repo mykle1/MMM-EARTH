@@ -9,14 +9,14 @@ Module.register("MMM-NASA", {
     // Module config defaults.
     defaults: {
     	fadeSpeed: 0,
-    	updateInterval: 15000,
+    	updateInterval: 1800000,
         animationSpeed: 0,
         initialLoadDelay: 0,  
         retryDelay: 2500, 
         useHeader: false, 
-        header: "********Please set header txt in config.js***** see instructions", // 
-        MaxWidth: "10%",
-        MaxHeight: "10%",
+        header: "********Please set header txt in config.js***** see instructions",
+        MaxWidth: "50%",
+        MaxHeight: "50%",
         rotateInterval: 5 * 1000,
         
     },
