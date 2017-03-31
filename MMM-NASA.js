@@ -10,18 +10,18 @@ Module.register("MMM-NASA", {
     defaults: {
     	fadeSpeed: 0,
     	updateInterval: 30 * 60 * 1000, // 30 minutes
-        animationSpeed: 0,
-        initialLoadDelay: 0,  
+        animationSpeed: 3000,
+        initialLoadDelay: 1250,  
         retryDelay: 2500, 
         useHeader: false, 
-        header: "********Please set header txt in config.js***** see instructions",
+        header: "********Please set header txt in config.js***** see README file",
         MaxWidth: "50%",
         MaxHeight: "50%",
-        rotateInterval: 5 * 1000,
+        rotateInterval: 10 * 1000,
         
     },
 
-    // Define required scripts.  The standard :)ok
+    // Define required scripts.
     getScripts: function() {
         return ["moment.js"];
     },
