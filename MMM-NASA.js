@@ -9,7 +9,7 @@ Module.register("MMM-NASA", {
     // Module config defaults.
     defaults: {
     	fadeSpeed: 0,
-    	updateInterval: 1800000,
+    	updateInterval: 30 * 60 * 1000, // 30 minutes
         animationSpeed: 0,
         initialLoadDelay: 0,  
         retryDelay: 2500, 
