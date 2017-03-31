@@ -10,14 +10,14 @@ Module.register("MMM-EARTH", {
     defaults: {
     	fadeSpeed: 0,
     	updateInterval: 30 * 60 * 1000, // 30 minutes
-        animationSpeed: 0,
-        initialLoadDelay: 0,  
+        animationSpeed: 3000,
+        initialLoadDelay: 1250,  
         retryDelay: 2500, 
         useHeader: false, 
-        header: "********Please set header txt in config.js***** see instructions",
+        header: "********Please set header txt in config.js***** see README",
         MaxWidth: "50%",
         MaxHeight: "50%",
-        rotateInterval: 5 * 1000,
+        rotateInterval: 10 * 1000,
         
     },
 
