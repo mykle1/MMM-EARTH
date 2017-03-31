@@ -1,6 +1,6 @@
 # MMM-EARTH
 
-A MagicMirror module to display the Earth as it rotates.
+A MagicMirror module to display real time pictures of the Earth as it rotates. The sunlit side!
 
 ## How we look - from 1,000,000 miles away!
 
