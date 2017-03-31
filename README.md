@@ -1,4 +1,4 @@
-# MMM-NASA
+# MMM-EARTH
 
 A MagicMirror module to display the Earth as it rotates.
 
@@ -31,13 +31,13 @@ NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite
 ## Installation
 
 * Clone this repo into `~/MagicMirror/modules` directory.
-* `cd MMM-NASA`
-* `npm install` in ~/MagicMirror/modules/MMM-NASA directory.
+* `cd MMM-EARTH`
+* `npm install` in ~/MagicMirror/modules/MMM-EARTH directory.
 
 ## Add to Config.js
 
     {
-        module: "MMM-NASA",
+        module: "MMM-EARTH",
         position: "bottom_center",
         config: {
             rotateInterval: 5000,
