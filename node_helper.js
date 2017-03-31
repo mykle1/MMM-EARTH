@@ -1,5 +1,5 @@
 /* Magic Mirror
- * Module: MMM-NASA
+ * Module: MMM-EARTH
  *
  * By Mykle1  
  * 
@@ -15,22 +15,22 @@ module.exports = NodeHelper.create({
     },
 
 
-    getNASA: function(url) {
+    getEARTH: function(url) {
         request({
             url: "https://epic.gsfc.nasa.gov/api/natural",
             method: 'GET'
         }, (error, response, body) => {
             if (!error && response.statusCode == 200) {
                 var result = JSON.parse(body);
-                this.sendSocketNotification('NASA_RESULTS', result);
+                this.sendSocketNotification('EARTH_RESULTS', result);
                
             }
         });
     },
 
     socketNotificationReceived: function(notification, payload) {
-        if (notification === 'GET_NASA') {
-            this.getNASA(payload);
+        if (notification === 'GET_EARTH') {
+            this.getEARTH(payload);
         }
     }
 });
