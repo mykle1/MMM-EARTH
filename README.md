@@ -40,7 +40,7 @@ NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite
         module: "MMM-EARTH",
         position: "bottom_center",
         config: {
-            rotateInterval: 5000,
+            rotateInterval: 10000,
             MaxWidth: "50%",
             MaxHeight: "50%",
         }
@@ -50,9 +50,9 @@ NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite
 
 | **Option** | **Default** | **Description** |
 | --- | --- | --- |
-| `updateInterval` | `1800000` | Every 30 minutes = 48. DO NOT exceed 50 per day. |
-| `animationSpeed` | `0` | The speed at which each image fades in ms. |
-| `rotateInterval` | `3000` | The speed at which the images rotate in ms. |
+| `updateInterval` | `30*60*1000` | Every 30 minutes = 48. DO NOT exceed 50 per day. |
+| `animationSpeed` | `3000` | The speed at which each image fades in ms. |
+| `rotateInterval` | `10000` | The speed at which the images rotate in ms. |
 | `initialLoadDelay` | `2500` | Module load delay in ms |
 | `retryDelay` | `2500`  |Delay to retry fetching data. |
 | `useHeader` | false | Must be set to true if you want a header |
