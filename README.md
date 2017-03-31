@@ -16,7 +16,7 @@ NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite
 
 
 ## Dependencies
-
+* Works best on a motherboard that is more robust than a Raspberry Pi 3. Results shown above.
 * An installation of [MagicMirror<sup>2</sup>](https://github.com/MichMich/MagicMirror)
 * npm
 * [request](https://www.npmjs.com/package/request)
@@ -51,8 +51,7 @@ NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite
 | **Option** | **Default** | **Description** |
 | --- | --- | --- |
 | `updateInterval` | `1800000` | Every 30 minutes = 48. DO NOT exceed 50 per day. |
-| `animationSpeed` | `0` | The speed at which each image loads in ms. |
-| `fadeSpeed` | `0` | The speed at which each image fades in ms. |
+| `animationSpeed` | `0` | The speed at which each image fades in ms. |
 | `rotateInterval` | `3000` | The speed at which the images rotate in ms. |
 | `initialLoadDelay` | `2500` | Module load delay in ms |
 | `retryDelay` | `2500`  |Delay to retry fetching data. |
