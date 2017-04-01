@@ -62,7 +62,7 @@ Module.register("MMM-EARTH", {
          var earth = this.earth[hkeys[this.activeItem]];
         
 			var earthImg = earth.image;
-	console.log(earthImg+".png");
+	console.log(earthImg+".jpg");
 
         var earthPhoto = document.createElement("div");
         var daily = moment().subtract(1, "days").format('YYYY/MM/DD');
