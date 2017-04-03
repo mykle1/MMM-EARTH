@@ -65,7 +65,7 @@ Module.register("MMM-EARTH", {
 	console.log(earthImg+".jpg");
 
         var earthPhoto = document.createElement("div");
-        var daily = moment().subtract(1, "days").format('YYYY/MM/DD');
+        var daily = moment().subtract(2, "days").format('YYYY/MM/DD');
         earthPhoto.innerHTML = '<img src="https://epic.gsfc.nasa.gov/archive/natural/'+daily+'/jpg/'+earthImg+'.jpg"  width="'+this.config.MaxWidth+'" height="'+this.config.MaxHeight+'">';
         }
         wrapper.appendChild(earthPhoto);
