@@ -15,7 +15,7 @@ module.exports = NodeHelper.create({
     },
 
 
-    getEARTH: function(url) {
+        getEARTH: function(url) {
         request({
             url: "https://epic.gsfc.nasa.gov/api/natural",
             method: 'GET'
@@ -23,7 +23,20 @@ module.exports = NodeHelper.create({
             if (!error && response.statusCode == 200) {
                 var result = JSON.parse(body);
                 this.sendSocketNotification('EARTH_RESULTS', result);
-               
+            } else if(response.statusCode == 404) {
+                this.getStaticData();
+            }
+        });
+    },
+    
+    getStaticData: function(){
+        request({
+            url: "staticurl",
+            method: 'GET'
+        }, (error, response, body) => {
+            if (!error && response.statusCode == 200) {
+                var result = JSON.parse(body);
+                this.sendSocketNotification('STATIC_RESULTS', result);
             }
         });
     },
