@@ -31,7 +31,7 @@ module.exports = NodeHelper.create({
     
     getStaticData: function(){
         request({
-            url: "staticurl",
+            url: "https://epic.gsfc.nasa.gov/api/natural/date/2016-07-05",
             method: 'GET'
         }, (error, response, body) => {
             if (!error && response.statusCode == 200) {
