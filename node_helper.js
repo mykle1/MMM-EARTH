@@ -24,7 +24,7 @@ module.exports = NodeHelper.create({
                 var result = JSON.parse(body);
                 this.sendSocketNotification('EARTH_RESULTS', result);
             } else if(response.statusCode == 404) {
-                this.getStaticData();
+                this.getSTATIC();
             }
         });
     },
