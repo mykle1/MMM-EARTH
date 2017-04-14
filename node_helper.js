@@ -29,7 +29,7 @@ module.exports = NodeHelper.create({
         });
     },
     
-    getSTATIC: function(){
+    getSTATIC: function(){      // I changed the name of this function to getSTATIC to make it easier for me //
         request({
             url: "https://epic.gsfc.nasa.gov/api/natural/date/2016-07-05",
             method: 'GET'
