@@ -29,7 +29,7 @@ module.exports = NodeHelper.create({
         });
     },
     
-    getStaticData: function(){
+    getSTATIC: function(){
         request({
             url: "https://epic.gsfc.nasa.gov/api/natural/date/2016-07-05",
             method: 'GET'
