@@ -16,8 +16,8 @@ NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite
 
 
 ## Dependencies
-* Works anicely on a Raspberry Pi 3 with default settings.
-* Works best on a motherboard that is more robust than a Raspberry Pi 3. Results shown above.
+* Works nicely on a Raspberry Pi 3 with default settings (after caching images for a few seconds).
+* Works best on a motherboard that is more robust than a Raspberry Pi 3. Results (Easter Egg) shown above.
 * An installation of [MagicMirror<sup>2</sup>](https://github.com/MichMich/MagicMirror)
 * npm
 
