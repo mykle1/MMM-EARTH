@@ -16,11 +16,10 @@ NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite
 
 
 ## Dependencies
+* Works anicely on a Raspberry Pi 3 with default settings.
 * Works best on a motherboard that is more robust than a Raspberry Pi 3. Results shown above.
 * An installation of [MagicMirror<sup>2</sup>](https://github.com/MichMich/MagicMirror)
 * npm
-* [request](https://www.npmjs.com/package/request)
-
 
 ## Info
 
@@ -40,7 +39,7 @@ NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite
         module: "MMM-EARTH",
         position: "bottom_center",
         config: {
-            rotateInterval: 10000,
+            rotateInterval: 15000,
             MaxWidth: "50%",
             MaxHeight: "50%",
         }
@@ -61,4 +60,4 @@ NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite
 | `MaxHeight` | `"50%"` | Choose height of image between the `""` (Ex: `200px` or '12%').. |
 
 This module would not be possible without the unfailing patience, generosity and kindness of 
-cowboysdude (Module Developer - Extraordinaire)
+cowboysdude (Module Developer - Extraordinaire) and Strawberry 3.141 (Super Genius).
