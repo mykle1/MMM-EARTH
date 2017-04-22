@@ -1,12 +1,13 @@
 /* Magic Mirror
  * Module: MMM-EARTH
  *
- * By Mykle1  
+ * By Mykle1 - Tutored by Cowboysdude - Rescued by Strawberry
  * 
  */
 const NodeHelper = require('node_helper');
 const request = require('request');
 const moment = require('moment');
+
 
 module.exports = NodeHelper.create({
 
@@ -15,21 +16,23 @@ module.exports = NodeHelper.create({
     },
 
 
-        getEARTH: function(url) {
+    getEARTH: function(url) {
         request({
-            url: "https://epic.gsfc.nasa.gov/api/natural",
+            url: "https://epic.gsfc.nasa.gov/api/natural/" + moment().format("YYYY-MM-DD"),
             method: 'GET'
         }, (error, response, body) => {
             if (!error && response.statusCode == 200) {
                 var result = JSON.parse(body);
-                this.sendSocketNotification('EARTH_RESULTS', result);
-            } else if(response.statusCode == 404) {
-                this.getSTATIC();
+                if (result.length > 0) {
+                    this.sendSocketNotification('EARTH_RESULTS', result);
+                } else {
+                    this.getSTATIC();
+                }
             }
         });
     },
-    
-    getSTATIC: function(){      // I changed the name of this function to getSTATIC to make it easier for me //
+
+    getSTATIC: function() {
         request({
             url: "https://epic.gsfc.nasa.gov/api/natural/date/2016-07-05",
             method: 'GET'
