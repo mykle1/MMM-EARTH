@@ -30,8 +30,8 @@ NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite
 ## Installation
 
 * Clone this repo into `~/MagicMirror/modules` directory.
-* `cd MMM-EARTH`
-* `npm install` in ~/MagicMirror/modules/MMM-EARTH directory.
+* Then type `cd MMM-EARTH`
+* `npm install` in `~/MagicMirror/modules/MMM-EARTH` directory.
 
 ## Add to Config.js
 
@@ -56,8 +56,8 @@ NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite
 | `retryDelay` | `2500`  |Delay to retry fetching data. |
 | `useHeader` | false | Must be set to true if you want a header |
 | `header` | `"Your Header"` | Add header between the `""` if desired. |
-| `MaxWidth` | `"50%"`|  Choose width of image between the `""` (Ex: `200px` or '12%'). |
-| `MaxHeight` | `"50%"` | Choose height of image between the `""` (Ex: `200px` or '12%').. |
+| `MaxWidth` | `"50%"`|  Choose width of image. (Ex: '75%') |
+| `MaxHeight` | `"50%"` | Choose height of image. (Ex: '75%') |
 
 This module would not be possible without the unfailing patience, generosity and kindness of 
 cowboysdude (Module Developer - Extraordinaire) and Strawberry 3.141 (Super Genius).
