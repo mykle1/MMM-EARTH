@@ -56,5 +56,7 @@ NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite
 | `MaxWidth` | `"50%"`|  Choose width of image. (Ex: '75%') Should be the same |
 | `MaxHeight` | `"50%"` | Choose height of image. (Ex: '75%') Should be the same |
 
-This module would not be possible without the unfailing patience, generosity and kindness of 
-cowboysdude (Module Developer - Extraordinaire) and Strawberry 3.141 (Super Genius).
+This module would not be possible without the unfailing patience, generosity and kindness of:
+## cowboysdude (Module Developer - Extraordinaire) 
+## Strawberry 3.141 (Super Genius).
+## Credit: NASA's Earth Polychromatic Imaging Camera (EPIC) team.
