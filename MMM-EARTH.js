@@ -1,14 +1,13 @@
 /* Magic Mirror
  * Module: MMM-EARTH
- *
- * By Mykle1 - Tutored by Cowboysdude - Rescued by Strawberry
+ * Credit: NASA's Earth Polychromatic Imaging Camera (EPIC) team.
  * 
+ * By Mykle1 - Tutored by Cowboysdude - Rescued by Strawberry 3.141
  */
 Module.register("MMM-EARTH", {
 
     // Module config defaults.
     defaults: {
-        fadeSpeed: 0,
         updateInterval: 30 * 60 * 1000, // 30 minutes
         animationSpeed: 3000,
         initialLoadDelay: 1250,
