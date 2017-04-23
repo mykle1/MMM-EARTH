@@ -15,20 +15,19 @@ NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite
 
 
 
-## Dependencies
+## Hardware
 * Works nicely on a Raspberry Pi 3 with default settings (after caching images for a few seconds).
 * Works best on a motherboard that is more robust than a Raspberry Pi 3. Results (Easter Egg) shown above.
-* An installation of [MagicMirror<sup>2</sup>](https://github.com/MichMich/MagicMirror)
-* npm
 
 ## Info
 
 * No API key is necessary but these limits apply.
 * 50 requests per IP address per day.
 
-## Installation
+## Installation of module and dependencies
 
 * `git clone https://github.com/mykle1/MMM-EARTH.git` into `~/MagicMirror/modules` directory.
+* `npm install` in your `~/MagicMirror/modules/MMM-EARTH` directory.
 
 ## Add this to your config.js file
 
