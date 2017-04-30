@@ -34,7 +34,7 @@ NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite
         module: "MMM-EARTH",
         position: "bottom_center",
         config: {
-			mode: "Natural",
+            mode: "Natural",
             rotateInterval: 15000,
             MaxWidth: "50%",
             MaxHeight: "50%",
