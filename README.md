@@ -14,10 +14,9 @@ On July 5th, 2016, the moon passed between DSCOVR and the Earth. EPIC snapped th
 NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite, provides daily, full disc imagery of the Earth and captures unique perspectives of certain astronomical events, such as lunar transits. (Seen above) EPIC uses a 2048x2048 pixel CCD detector coupled to a 30-cm aperture Cassegrain telescope. The DSCOVR satellite was launched by SpaceX on a Falcon 9 two-stage rocket on February 11, 2015 from Cape Canaveral.
 
 
-
 ## Hardware
 * Works nicely on a Raspberry Pi 3 with default settings (after caching images for a few seconds).
-* Works best on a motherboard that is more robust than a Raspberry Pi 3. Results (Easter Egg) shown above.
+* Works best on a motherboard that is more robust than a Raspberry Pi 3. Results shown above.
 
 ## Info
 
@@ -29,12 +28,13 @@ NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite
 * `git clone https://github.com/mykle1/MMM-EARTH.git` into `~/MagicMirror/modules` directory.
 * `npm install` in your `~/MagicMirror/modules/MMM-EARTH` directory.
 
-## Add this to your config.js file
+## Add to Config.js
 
     {
         module: "MMM-EARTH",
         position: "bottom_center",
         config: {
+			mode: "Natural",
             rotateInterval: 15000,
             MaxWidth: "50%",
             MaxHeight: "50%",
@@ -45,17 +45,20 @@ NASA's Earth Polychromatic Imaging Camera (EPIC), aboard NOAA's DSCOVR satellite
 
 | **Option** | **Default** | **Description** |
 | --- | --- | --- |
+| `mode` | `Natural` | Natural, Enhanced, Lunar, naturalThumb, enhancedThumb. |
 | `updateInterval` | `30*60*1000` | Every 30 minutes = 48. DO NOT exceed 50 per day. |
-| `animationSpeed` | `3000` | The speed at which each image fades in and out. |
-| `rotateInterval` | `10000` | The time between each new image. |
+| `animationSpeed` | `3000` | The speed at which each new image fades in and out. |
+| `rotateInterval` | `15000` | The time between each new image. (Rotation) |
 | `initialLoadDelay` | `2500` | Module load delay in ms |
 | `retryDelay` | `2500`  |Delay to retry fetching data. |
 | `useHeader` | false | Must be set to true if you want a header |
 | `header` | `"Your Header"` | Add header between the `""` if desired. |
-| `MaxWidth` | `"50%"`|  Choose width of image. (Ex: '75%') Should be the same |
-| `MaxHeight` | `"50%"` | Choose height of image. (Ex: '75%') Should be the same |
+| `MaxWidth` | `"50%"`|  Choose width of image. Should be the same as MaxHeight. |
+| `MaxHeight` | `"50%"` | Choose height of image. Should be the same as MaxWidth. |
 
 This module would not be possible without the unfailing patience, generosity and kindness of:
-## cowboysdude (Module Developer - Extraordinaire) 
+## cowboysdude (Module Developer Extraordinaire & Tutor) 
+Consultations and additions by:
 ## Strawberry 3.141 (Super Genius).
 ## Credit: NASA's Earth Polychromatic Imaging Camera (EPIC) team.
+
