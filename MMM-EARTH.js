@@ -1,26 +1,27 @@
 /* Magic Mirror
  * Module: MMM-EARTH
- * Credit: NASA's Earth Polychromatic Imaging Camera (EPIC) team.
+ *
+ * By Mykle1 - Tutored by Cowboysdude - Additions by Strawberry
  * 
- * By Mykle1 - Tutored by Cowboysdude - Rescued by Strawberry 3.141
  */
 Module.register("MMM-EARTH", {
 
     // Module config defaults.
     defaults: {
-        updateInterval: 30 * 60 * 1000, // 30 minutes
+        style: "Natural", // Natural, Enhanced, Lunar, naturalThumb, enhancedThumb
+        updateInterval: 30 * 60 * 1000, // 30 minutes - Don't change!
         animationSpeed: 3000,
         initialLoadDelay: 1250,
         retryDelay: 2500,
         useHeader: false,
         header: "********Please set header txt in config.js***** see README",
-        MaxWidth: "50%",
-        MaxHeight: "50%",
+        MaxWidth: "50%", // Should be the same as MaxHeight
+        MaxHeight: "50%", // Should be the same as MaxWidth
         rotateInterval: 10 * 1000,
 
     },
 
-    // Define required scripts. - The standard
+    // Define required scripts.
     getScripts: function() {
         return ["moment.js"];
     },
@@ -29,6 +30,7 @@ Module.register("MMM-EARTH", {
         Log.info("Starting module: " + this.name);
 
         // Set locale.
+        this.url = this.getUrl();
         this.today = "";
         this.earth = {};
         this.activeItem = 0;
@@ -61,19 +63,50 @@ Module.register("MMM-EARTH", {
             var earth = this.earth[hkeys[this.activeItem]];
 
             var earthImg = earth.image;
-            //  console.log(earthImg+".jpg");  // for checking later if necessary
+            // console.log(earthImg+".jpg");  // for checking
 
             var earthPhoto = document.createElement("div");
-            var daily = earth.date.slice(0, 10).replace(/-/g, "/"); // <-- Amazing Strawberry fix
-            earthPhoto.innerHTML = '<img src="https://epic.gsfc.nasa.gov/archive/natural/' + daily + '/jpg/' + earthImg + '.jpg"  width="' + this.config.MaxWidth + '" height="' + this.config.MaxHeight + '">';
+            var daily = earth.date.slice(0, 10).replace(/-/g, "/"); // <-- Strawberry
+
+
+            if (this.config.style == "Natural") {
+                earthPhoto.innerHTML = '<img src="https://epic.gsfc.nasa.gov/archive/natural/' + daily + '/jpg/' + earthImg + '.jpg"  width="' + this.config.MaxWidth + '" height="' + this.config.MaxHeight + '">';
+            } else if (this.config.style == "Enhanced") {
+                earthPhoto.innerHTML = '<img src="https://epic.gsfc.nasa.gov/archive/enhanced/' + daily + '/jpg/' + earthImg + '.jpg"  width="' + this.config.MaxWidth + '" height="' + this.config.MaxHeight + '">';
+            } else if (this.config.style == "Lunar") {
+                earthPhoto.innerHTML = '<img src="https://epic.gsfc.nasa.gov/archive/natural/2016/07/05/jpg/' + earthImg + '.jpg"  width="' + this.config.MaxWidth + '" height="' + this.config.MaxHeight + '">';
+            } else if (this.config.style == "naturalThumb") {
+                earthPhoto.innerHTML = '<img src="https://epic.gsfc.nasa.gov/archive/natural/' + daily + '/thumbs/' + earthImg + '.jpg"  width="' + this.config.MaxWidth + '" height="' + this.config.MaxHeight + '">';
+            } else if (this.config.style == "enhancedThumb") {
+                earthPhoto.innerHTML = '<img src="https://epic.gsfc.nasa.gov/archive/enhanced/' + daily + '/thumbs/' + earthImg + '.jpg"  width="' + this.config.MaxWidth + '" height="' + this.config.MaxHeight + '">';
+            }
+
         }
         wrapper.appendChild(earthPhoto);
-
-
         return wrapper;
     },
 
+    getUrl: function() {
+        var url = null;
+        var style = this.config.style;
 
+
+        if (style == "Natural") {
+            url = "https://epic.gsfc.nasa.gov/api/natural";
+        } else if (style == "Enhanced") {
+            url = "https://epic.gsfc.nasa.gov/api/enhanced";
+        } else if (style == "Lunar") {
+            url = "https://epic.gsfc.nasa.gov/api/natural/date/2016-07-05";
+        } else if (style == "naturalThumb") {
+            url = "https://epic.gsfc.nasa.gov/api/natural";
+        } else if (style == "enhancedThumb") {
+            url = "https://epic.gsfc.nasa.gov/api/enhanced";
+        } else {
+            console.log("Error can't get EARTH url" + response.statusCode);
+        }
+
+        return url;
+    },
 
     processEARTH: function(data) {
         this.today = data.Today;
@@ -99,23 +132,21 @@ Module.register("MMM-EARTH", {
 
 
     getEARTH: function() {
-        this.sendSocketNotification('GET_EARTH');
-
+        this.sendSocketNotification('GET_EARTH', this.url);
     },
 
-    getSTATIC: function() {
-        this.sendSocketNotification('GET_STATIC');
-
-    },
 
     socketNotificationReceived: function(notification, payload) {
         if (notification === "EARTH_RESULTS") {
             this.processEARTH(payload);
-            if (this.rotateInterval == null) {
-                this.scheduleCarousel();
-            }
-            this.updateDom(this.config.fadeSpeed);
+
         }
+
+        if (this.rotateInterval == null) {
+            this.scheduleCarousel();
+        }
+        this.updateDom(this.config.fadeSpeed);
+
         this.updateDom(this.config.initialLoadDelay);
     },
 
