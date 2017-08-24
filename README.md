@@ -8,6 +8,10 @@ A MagicMirror module to display real time pictures of the Earth as it rotates. T
 ##
 On July 5th, 2016, the moon passed between DSCOVR and the Earth. EPIC snapped these images over a period of about 4 hours. In this set, the far side of the moon, which is never seen from Earth, passes by. The DSCOVR satellite is, at times, 1 million miles away, more than 4 times further away than the moon itself.
 
+## EDIT! On August 21, 2017, MMM-EARTH captured a unique perspective of the Total Solar Eclipse!
+
+* Rather than crowd this README with more pictures, you can simply click the link below to see the result.
+* https://forum.magicmirror.builders/topic/4688/today-s-total-solar-eclipse/2
 
 ## How you see it
 
