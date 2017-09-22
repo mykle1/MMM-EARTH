@@ -18,6 +18,21 @@ Module.register("MMM-EARTH", {
         MaxWidth: "50%", // Should be the same as MaxHeight
         MaxHeight: "50%", // Should be the same as MaxWidth
         rotateInterval: 10 * 1000,
+        
+         MonthsArray: {
+            "Jan": "01",
+            "Feb": "02",
+            "Mar": "03",
+            "Apr": "04",
+            "May": "05",
+            "Jun": "06",
+            "Jul": "07",
+            "Aug": "08",
+            "Sep": "09",
+            "Oct": "10",
+            "Nov": "11",
+            "Dec": "12"
+        }
 
     },
 
@@ -66,9 +81,12 @@ Module.register("MMM-EARTH", {
             // console.log(earthImg+".jpg");  // for checking
 
             var earthPhoto = document.createElement("div");
-            var daily = earth.date.slice(0, 10).replace(/-/g, "/"); // <-- Strawberry
-
-
+           
+            var date = earth.date;
+            var slicer = earth.date.slice(0,11);
+            var parts = slicer.split("-");
+            var daily = parts[2]+"/"+this.config.MonthsArray[parts[1]]+"/"+parts[0];
+           
             if (this.config.mode == "Natural") {
                 earthPhoto.innerHTML = '<img src="https://epic.gsfc.nasa.gov/archive/natural/' + daily + '/jpg/' + earthImg + '.jpg"  width="' + this.config.MaxWidth + '" height="' + this.config.MaxHeight + '">';
             } else if (this.config.mode == "Enhanced") {
@@ -111,6 +129,7 @@ Module.register("MMM-EARTH", {
     processEARTH: function(data) {
         this.today = data.Today;
         this.earth = data;
+console.log(this.earth);
         this.loaded = true;
     },
 
