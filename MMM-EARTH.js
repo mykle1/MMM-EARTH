@@ -81,11 +81,26 @@ Module.register("MMM-EARTH", {
             // console.log(earthImg+".jpg");  // for checking
 
             var earthPhoto = document.createElement("div");
+			
+			
+			
+			
+	//		var date = earth.date;
+	//		var	dateString = new Date(earth.date).toUTCString();
+	//		var	dateString = dateString.split('-').slice(0, 4);
+	//		var	daily = dateString[0] +"/"+ dateString[1] + "/" +dateString[2];
+			
+			
            
             var date = earth.date;
-            var slicer = earth.date.slice(0,11);
+            var slicer = earth.date.slice(0,10);
             var parts = slicer.split("-");
-            var daily = parts[2]+"/"+this.config.MonthsArray[parts[1]]+"/"+parts[0];
+    //      var daily = parts[2]+"/"+this.config.MonthsArray[parts[1]]+"/"+parts[0]; // NASA changed data/date format
+			var daily = parts[0]+"/"+parts[1]+"/"+parts[2]; // NASA changed data/date format AGAIN!
+			
+			
+			
+			
            
             if (this.config.mode == "Natural") {
                 earthPhoto.innerHTML = '<img src="https://epic.gsfc.nasa.gov/archive/natural/' + daily + '/jpg/' + earthImg + '.jpg"  width="' + this.config.MaxWidth + '" height="' + this.config.MaxHeight + '">';
