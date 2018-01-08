@@ -105,6 +105,20 @@ Module.register("MMM-EARTH", {
         wrapper.appendChild(earthPhoto);
         return wrapper;
     },
+    
+    /////  Add this function to the modules you want to control with voice //////
+
+    notificationReceived: function(notification, payload) {
+        if (notification === 'HIDE_EARTH') {
+            this.hide(1000);
+            this.updateDom(300);
+        }  else if (notification === 'SHOW_EARTH') {
+            this.show(1000);
+            this.updateDom(300);
+        }
+            
+    },
+    
 
     getUrl: function() {
         var url = null;
