@@ -78,7 +78,7 @@ Module.register("MMM-EARTH", {
             var earth = this.earth[earthKeys[this.activeItem]];
 
             var earthImg = earth.image;
-            // console.log(earthImg+".jpg");  // for checking
+            // console.log(earthImg+".jpg");  // for checking in dev console
 
             var earthPhoto = document.createElement("div");
 			
@@ -110,11 +110,9 @@ Module.register("MMM-EARTH", {
 
     notificationReceived: function(notification, payload) {
         if (notification === 'HIDE_EARTH') {
-            this.hide(1000);
-            this.updateDom(300);
+            this.hide();
         }  else if (notification === 'SHOW_EARTH') {
             this.show(1000);
-            this.updateDom(300);
         }
             
     },
@@ -145,7 +143,7 @@ Module.register("MMM-EARTH", {
     processEARTH: function(data) {
         this.today = data.Today;
         this.earth = data;
-console.log(this.earth);
+    //    console.log(this.earth); // for checking in dev console
         this.loaded = true;
     },
 
