@@ -1,0 +1,12 @@
+/*
+ Negative numbers will move EARTH in the direction of the margins name
+ Example - margin-bottom: -45px; will move EARTH towards the bottom
+*/
+
+.MMM-EARTH .module-content {
+  margin-right: 0px;        /* Precisely align EARTH image with these */
+  margin-left: 0px;         /* Precisely align EARTH image with these */
+  margin-top: 0px;          /* Precisely align EARTH image with these */
+  margin-bottom: 0px;       /* Precisely align EARTH image with these */
+  float: center;               /* Left, center or right */
+}
