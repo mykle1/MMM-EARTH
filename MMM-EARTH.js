@@ -4,12 +4,13 @@
  * By Mykle1 - Tutored by Cowboysdude - Additions by Strawberry
  * 
  */
+
 Module.register("MMM-EARTH", {
 
     // Module config defaults.
     defaults: {
         mode: "Natural", // Natural, Enhanced, Lunar, naturalThumb, enhancedThumb
-        updateInterval: 30 * 60 * 1000, // 30 minutes - Don't change!
+        updateInterval: 30 * 60 * 1000, // 30 minutes - Do not lower this value!
         animationSpeed: 3000,
         initialLoadDelay: 1250,
         retryDelay: 2500,
@@ -18,8 +19,8 @@ Module.register("MMM-EARTH", {
         MaxWidth: "50%", // Should be the same as MaxHeight
         MaxHeight: "50%", // Should be the same as MaxWidth
         rotateInterval: 10 * 1000,
-        
-         MonthsArray: {
+
+        MonthsArray: {
             "Jan": "01",
             "Feb": "02",
             "Mar": "03",
@@ -55,7 +56,9 @@ Module.register("MMM-EARTH", {
 
     getDom: function() {
 
-        var wrapper = document.createElement("div");
+
+        // console.log(earthImg+".jpg");  // for checking in dev console
+        const wrapper = document.createElement("div");
         wrapper.className = "wrapper";
 
         if (!this.loaded) {
@@ -64,31 +67,28 @@ Module.register("MMM-EARTH", {
             return wrapper;
         }
         if (this.config.useHeader === true) {
-            var header = document.createElement("header");
+            const header = document.createElement("header");
             header.className = "xsmall bright";
             header.innerHTML = this.config.header;
             wrapper.appendChild(header);
         }
 
-        var earthKeys = Object.keys(this.earth);
+        const earthPhoto = document.createElement("div");
+        const earthKeys = Object.keys(this.earth);
         if (earthKeys.length > 0) {
             if (this.activeItem >= earthKeys.length) {
                 this.activeItem = 0;
             }
-            var earth = this.earth[earthKeys[this.activeItem]];
+            const earth = this.earth[earthKeys[this.activeItem]];
 
-            var earthImg = earth.image;
-            // console.log(earthImg+".jpg");  // for checking in dev console
+            const earthImg = earth.image;
 
-            var earthPhoto = document.createElement("div");
-			
-            var date = earth.date;
-            var slicer = earth.date.slice(0,10);
-            var parts = slicer.split("-");
-    //      var daily = parts[2]+"/"+this.config.MonthsArray[parts[1]]+"/"+parts[0]; // NASA changed data/date format
-			var daily = parts[0]+"/"+parts[1]+"/"+parts[2]; // NASA changed data/date format AGAIN!
-			
-           
+            const slicer = earth.date.slice(0, 10);
+            const parts = slicer.split("-");
+            //      var daily = parts[2]+"/"+this.config.MonthsArray[parts[1]]+"/"+parts[0]; // NASA changed data/date format
+            const daily = parts[0] + "/" + parts[1] + "/" + parts[2]; // NASA changed data/date format AGAIN!
+
+
             if (this.config.mode == "Natural") {
                 earthPhoto.innerHTML = '<img src="https://epic.gsfc.nasa.gov/archive/natural/' + daily + '/jpg/' + earthImg + '.jpg"  width="' + this.config.MaxWidth + '" height="' + this.config.MaxHeight + '">';
             } else if (this.config.mode == "Enhanced") {
@@ -105,22 +105,22 @@ Module.register("MMM-EARTH", {
         wrapper.appendChild(earthPhoto);
         return wrapper;
     },
-    
+
     /////  Add this function to the modules you want to control with voice //////
 
     notificationReceived: function(notification, payload) {
         if (notification === 'HIDE_EARTH') {
             this.hide();
-        }  else if (notification === 'SHOW_EARTH') {
+        } else if (notification === 'SHOW_EARTH') {
             this.show(1000);
         }
-            
+
     },
-    
+
 
     getUrl: function() {
         var url = null;
-        var mode = this.config.mode;
+        const mode = this.config.mode;
 
 
         if (mode == "Natural") {
@@ -143,7 +143,7 @@ Module.register("MMM-EARTH", {
     processEARTH: function(data) {
         this.today = data.Today;
         this.earth = data;
-    //    console.log(this.earth); // for checking in dev console
+        //    console.log(this.earth); // for checking in dev console
         this.loaded = true;
     },
 
@@ -160,7 +160,6 @@ Module.register("MMM-EARTH", {
             this.getEARTH();
         }, this.config.updateInterval);
         this.getEARTH(this.config.initialLoadDelay);
-        var self = this;
     },
 
 

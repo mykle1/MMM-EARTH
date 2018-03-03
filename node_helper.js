@@ -4,17 +4,15 @@
  * By Mykle1 - Tutored by Cowboysdude - Additions by Strawberry
  * 
  */
+
 const NodeHelper = require('node_helper');
 const request = require('request');
-const moment = require('moment');
-
 
 module.exports = NodeHelper.create({
 
     start: function() {
         console.log("Starting module: " + this.name);
     },
-
 
     getEARTH: function(url) {
         console.log(url);
