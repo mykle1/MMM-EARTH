@@ -41,6 +41,10 @@ Module.register("MMM-EARTH", {
     getScripts: function() {
         return ["moment.js"];
     },
+    
+    getStyles: function() {
+        return ["MMM-EARTH.css"];
+    },
 
     start: function() {
         Log.info("Starting module: " + this.name);
