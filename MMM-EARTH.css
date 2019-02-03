@@ -6,7 +6,7 @@ You must copy this to your custom.css file first and make your changes there.
  Example - margin-bottom: -45px; will move EARTH towards the bottom
 */
 
-.MMM-EARTH .module-content {
+.MMM-EARTH .photo {
   margin-right: 0px;        /* Precisely align EARTH image with these */
   margin-left: 0px;         /* Precisely align EARTH image with these */
   margin-top: 0px;          /* Precisely align EARTH image with these */
