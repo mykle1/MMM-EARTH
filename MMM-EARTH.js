@@ -92,7 +92,7 @@ Module.register("MMM-EARTH", {
             //      var daily = parts[2]+"/"+this.config.MonthsArray[parts[1]]+"/"+parts[0]; // NASA changed data/date format
             const daily = parts[0] + "/" + parts[1] + "/" + parts[2]; // NASA changed data/date format AGAIN!
 
-                earthPhoto.classList.Add("photo");
+                earthPhoto.classList.add("photo");
             if (this.config.mode == "Natural") {
                 earthPhoto.innerHTML = '<img src="https://epic.gsfc.nasa.gov/archive/natural/' + daily + '/jpg/' + earthImg + '.jpg"  width="' + this.config.MaxWidth + '" height="' + this.config.MaxHeight + '">';
             } else if (this.config.mode == "Enhanced") {
